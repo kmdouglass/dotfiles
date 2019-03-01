@@ -4,6 +4,7 @@ alias enw="emacs -nw"
 # git
 alias gd="git diff"
 alias gs="git status"
+alias gcm="EDITOR=emacs git commit"
 alias gds="git diff --staged"
 alias glg="git log --graph"
 alias gri="EDITOR=emacs git rebase -i"
