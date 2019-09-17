@@ -1,3 +1,5 @@
+alias ls="ls -aFl --color"
+
 # emacs
 alias enw="emacs -nw"
 
