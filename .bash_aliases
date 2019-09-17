@@ -6,6 +6,7 @@ alias enw="emacs -nw"
 # git
 alias gd="git diff"
 alias gs="git status"
+alias gbd="git branch -D"
 alias gcm="EDITOR=emacs git commit"
 alias gco="git checkout"
 alias gds="git diff --staged"
