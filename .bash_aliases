@@ -1,7 +1,7 @@
 alias ls="ls -aFl --color"
 
 # emacs
-alias enw="emacs -nw"
+alias enw="emacs -nw --no-site-file --no-site-lisp --no-splash --no-x-resources"
 
 # git
 alias gd="git diff"
