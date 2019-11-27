@@ -1,4 +1,5 @@
 alias ls="ls -aFl --color"
+alias tl2="tree -L 2"
 
 # emacs
 alias enw="emacs -nw --no-site-file --no-site-lisp --no-splash --no-x-resources"
@@ -13,6 +14,7 @@ alias gco="git checkout"
 alias gds="git diff --staged"
 alias glg="git log --graph"
 alias gri="EDITOR=emacs git rebase -i"
+alias gcma="git commit --amend"
 alias gpfo="git push --force origin"
 alias gcob="git checkout -b"
 alias gpom="git pull origin master"
