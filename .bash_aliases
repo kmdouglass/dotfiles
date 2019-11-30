@@ -1,5 +1,5 @@
 alias ls="ls -aFl --color"
-alias tl2="tree -L 2"
+alias tl="tree -L"
 
 # emacs
 alias enw="emacs -nw --no-site-file --no-site-lisp --no-splash --no-x-resources"
