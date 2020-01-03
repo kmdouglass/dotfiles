@@ -3,6 +3,7 @@ alias tl="tree -L"
 
 # emacs
 alias enw="emacs -nw --no-site-file --no-site-lisp --no-splash --no-x-resources"
+alias emc="emacsclient -t"
 
 # git
 alias gd="git diff"
