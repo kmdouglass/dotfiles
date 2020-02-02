@@ -121,10 +121,3 @@ fi
 if [ -f ~/.bash_local ]; then
     . ~/.bash_local
 fi
-
-# Python
-export WORKON_HOME=$HOME/venvs
-
-# npm
-export PATH="$PATH:$HOME/npm/bin"
-export NODE_PATH="$NODE_PATH:$HOME/npm/lib/node_modules"
