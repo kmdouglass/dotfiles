@@ -26,6 +26,9 @@ if [ -d "$HOME/.local/bin" ] ; then
     PATH="$HOME/.local/bin:$PATH"
 fi
 
+# Remap Caps Lock key from Backspace to Caps Lock (Colemak)
+xmodmap -e "keycode 66 = Caps_Lock"
+
 # Org-mode
 export ORG_SOURCE="${HOME}/src/org-mode"
 
