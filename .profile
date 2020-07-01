@@ -26,10 +26,6 @@ if [ -d "$HOME/.local/bin" ] ; then
     PATH="$HOME/.local/bin:$PATH"
 fi
 
-# Custom helper functions
-# shellcheck source=.helpers
-. "${HOME}/.helpers"
-
 # Org-mode
 export ORG_SOURCE="${HOME}/src/org-mode"
 
