@@ -1,44 +1,64 @@
-# ~/.profile: executed by the command interpreter for login shells.
-# This file is not read by bash(1), if ~/.bash_profile or ~/.bash_login
-# exists.
-# see /usr/share/doc/bash/examples/startup-files for examples.
-# the files are located in the bash-doc package.
-
-# the default umask is set in /etc/profile; for setting the umask
-# for ssh logins, install and configure the libpam-umask package.
-#umask 022
-
-# if running bash
-if [ -n "$BASH_VERSION" ]; then
-    # include .bashrc if it exists
-    if [ -f "$HOME/.bashrc" ]; then
-	. "$HOME/.bashrc"
-    fi
-fi
-
-# set PATH so it includes user's private bin if it exists
-if [ -d "$HOME/bin" ] ; then
-    PATH="$HOME/bin:$PATH"
-fi
-
-# set PATH so it includes user's private bin if it exists
-if [ -d "$HOME/.local/bin" ] ; then
-    PATH="$HOME/.local/bin:$PATH"
+# Import the .bashrc configuration file
+if [ -r "$HOME/.bashrc" ]; then
+    # shellcheck source=.bashrc
+    . "$HOME/.bashrc"
 fi
 
 # Custom helper functions
 # shellcheck source=.helpers
-. "${HOME}/.helpers"
+. "$HOME/.helpers"
 
-# Org-mode
-export ORG_SOURCE="${HOME}/src/org-mode"
+###################################################################################################
+# Environment variables
 
-# Python
-export WORKON_HOME="${HOME}/venvs"
+# AWS_VAULT
+export AWS_VAULT_BACKEND=secret-service
+export AWS_SESSION_TOKEN_TTL=8h
+
+# Caster
+if [ -d "$HOME/src/homelab/speech-recognition/caster" ]; then
+    export CASTER_USER_DIR="$HOME/src/homelab/speech-recognition/caster"
+fi
 
 # npm
-export PATH="$PATH:$HOME/npm/bin"
-export NODE_PATH="$NODE_PATH:$HOME/npm/lib/node_modules"
+if [ -d "$HOME/npm" ]; then
+    PATH="$PATH:$HOME/npm/bin"
+    export NODE_PATH="$NODE_PATH:$HOME/npm/lib/node_modules"
+fi
 
-# Cargo
-export PATH="$HOME/.cargo/bin:$PATH"
+# nvm
+if [ -d "$HOME/.nvm" ]; then
+    export NVM_DIR="$HOME/.nvm"
+    [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+    [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+fi
+
+# Org-mode
+if [ -d "$HOME/src/org-mode" ]; then
+    export ORG_SOURCE="$HOME/src/org-mode"
+fi
+
+# Python
+if [ -d "$HOME/venvs" ]; then
+    export WORKON_HOME="$HOME/venvs"
+fi
+
+# Rust
+if [ -d "$HOME/.cargo" ]; then
+    PATH="$HOME/.cargo/bin:$PATH"
+fi
+
+###################################################################################################
+# PATH
+
+# set PATH so it includes user's private bin if it exists
+if [ -d "$HOME/bin" ]; then
+    PATH="$HOME/bin:$PATH"
+fi
+
+# set PATH so it includes user's private .local/bin if it exists
+if [ -d "$HOME/.local/bin" ]; then
+    PATH="$HOME/.local/bin:$PATH"
+fi
+
+export PATH="$PATH"
