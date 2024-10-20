@@ -16,7 +16,6 @@
 ```sh
 # Local configuration
 if [ -f ~/.bash_local ]; then
-    # shellcheck source=/dev/null
     . ~/.bash_local
 fi
 ```

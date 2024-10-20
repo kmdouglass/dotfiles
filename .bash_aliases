@@ -1,4 +1,5 @@
-alias ls="ls -aFl --color"
+alias ls="ls -Fl --color"
+alias lsa="ls -aFl --color"
 alias tl="tree -L"
 
 # git
