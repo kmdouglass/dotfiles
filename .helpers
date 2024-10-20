@@ -1,3 +1,0 @@
-keychain_launch () {
-  /usr/bin/keychain "$HOME/.ssh/id_rsa"
-}
