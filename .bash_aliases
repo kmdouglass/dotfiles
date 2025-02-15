@@ -19,3 +19,7 @@ alias gri="EDITOR=emacs git rebase -i"
 alias gcma="git commit --amend"
 alias gcob="git checkout -b"
 alias gcmmsg="git commit -m"
+
+# tmux
+alias tmn="tmux new -s kmd"
+alias tma="tmux attach -t kmd"
