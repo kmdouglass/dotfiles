@@ -3,10 +3,19 @@
 {
   imports = [ ./hardware-configuration.nix ];
 
+  # Allow unfree packages
+  nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
+    "nvidia-x11"
+    "nvidia-settings"
+  ];
+
   # Boot
-  boot.kernelParams = [ "nomodeset" ];
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
+
+  # Hardware
+  hardware.graphics.enable = true;
+  hardware.nvidia.open = false;
 
   # Networking
   networking.hostName = "lebpc39";
@@ -51,6 +60,7 @@
       PermitRootLogin = "no";
     };
   };
+  services.xserver.videoDrivers = [ "nvidia" ];
 
   # Storage
   swapDevices = [{
