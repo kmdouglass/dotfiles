@@ -25,3 +25,11 @@ fi
 ## Updates
 
 - Update [make_symlinks.sh](make_symlinks.sh) when a file is added or removed.
+
+## Deployments
+
+To deploy a configuration onto a server, first create a secrets file in `.private/<SERVER_NAME>.secrets`. Then run:
+
+```console
+./scripts/deploy_<SERVER_NAME>.sh
+```

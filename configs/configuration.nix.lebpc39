@@ -13,12 +13,12 @@
   networking.useDHCP = false;
   networking.interfaces.enp0s25 = {
     ipv4.addresses = [{
-      address = "x.x.x.x"; # set per-machine
+      address = "w.w.w.w"; # set per-machine
       prefixLength = 24;
     }];
   };
   networking.defaultGateway = "x.x.x.x"; # set per-machine
-  networking.nameservers = [ "x.x.x.x" "x.x.x.x" ]; # set per-machine
+  networking.nameservers = [ "y.y.y.y" "z.z.z.z" ]; # set per-machine
   networking.firewall.allowedTCPPorts = [ 22 ];
 
   # Locale
